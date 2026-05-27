@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog — Neptune's personal blog about programming, game-dev, and hobbies">
+    <title>Blog — Neptune's Domain!</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.onload=null;this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+    <main>
+      <h1>Blog</h1>
+      <p>Thoughts, notes, and ramblings.</p>
+
+      <div class="blog-posts">
+        <a href="/blog/my-first-post/" class="blog-post-card">
+          <h3>My First Post</h3>
+          <div class="blog-post-meta">
+            <span class="blog-post-date"><i class="fas fa-calendar-alt"></i> May 26, 2026</span>
+            <span class="blog-tag">meta</span>
+          </div>
+          <p class="blog-post-excerpt">Hello world! This is my first blog post on this site. I'll be writing about programming, game development, and whatever else I find interesting.</p>
+          <span class="blog-post-read-more">Read more →</span>
+        </a>
+
+        <div class="blog-post-card placeholder">
+          <h3>More posts coming soon...</h3>
+          <p class="blog-post-excerpt">I'll be writing more posts as I work on my projects and learn new things. Stay tuned!</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="/">← Back home</a> |
+        <a href="/aboutme/">about me</a> |
+        <a href="/projects">projects</a> |
+        <a href="/lander/">lander</a>
+      </nav>
+    </main>
+    <footer>
+      <p>&copy; 2026 neptune</p>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>
