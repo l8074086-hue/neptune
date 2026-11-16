@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to start programming — A beginner's guide to getting started with coding">
+    <title>How to Start Programming — Neptune's Domain!</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.onload=null;this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+    <main>
+      <nav aria-label="Main navigation">
+        <a href="/">← Back home</a> |
+        <a href="/blog/">blog</a> |
+        <a href="/pancakes/">pancakes &lt;3</a> |
+        <a href="/aboutme/">about me</a> |
+        <a href="/projects">projects</a>
+      </nav>
+
+      <article class="blog-post">
+        <header class="blog-post-header">
+          <h1>How to Start Programming</h1>
+          <div class="blog-post-meta">
+            <span class="blog-post-date"><i class="fas fa-calendar-alt"></i> July 16, 2026</span>
+            <span class="blog-tag">programming</span>
+            <span class="blog-tag">beginner</span>
+          </div>
+        </header>
+
+        <section class="blog-post-content">
+          <h2>How do I start programming?</h2>
+
+          <p>If you wish to get started with programming there are multiple things you'd have to do. First off, you should select a first language. Starting with low-level languages can help you understand how computers work, so high-level languages don't feel like magic or like they're missing features. Personally, I think a first language should rarely matter and you should choose the language that fits what you're trying to do by learning programming. A cheat sheet will be provided from my experience as a programmer at the end.</p>
+
+          <h2>What is a low/high level language?</h2>
+
+          <p>To put it roughly, a low level language is closer to machine code, giving you control in return for being harder. Example: C. Higher level languages abstract away from machine code, making it easier to read for humans but usually taking longer for the machine to read.</p>
+
+          <h2>What are the main things I should learn?</h2>
+
+          <p>The most important thing to learn from any language are:</p>
+
+          <ul>
+            <li>Types / Variables</li>
+            <li>Control flow</li>
+            <li>Packages / Imports</li>
+            <li>Language specific features</li>
+            <li>Functions</li>
+          </ul>
+
+          <h3>Types / Variables</h3>
+
+          <p>Types are a really important part of programming. The most common types in Python include Strings, Integers, Floats, Lists and Dictionaries. Variables are a place to store information. In Python, you don't usually define types explicitly. Instead, you just define variables and the interpreter (what runs your code) infers it. Example: <code>string = "hello"</code> would make the interpreter infer a string from the variable.</p>
+
+          <h3>Control Flow</h3>
+
+          <p>These are things like:</p>
+
+          <ul>
+            <li>if/else</li>
+            <li>while loops</li>
+            <li>for loops</li>
+            <li>breaks</li>
+            <li>continues</li>
+            <li>matches</li>
+          </ul>
+
+          <p>These help your code decide what runs and give you the ability to specify the way you want your code to run. For example, if you make a game you always want a game loop. What it essentially is is a loop that runs forever and updates the game within that loop. The game ends when you break from the loop.</p>
+
+          <h3>Packages and Imports</h3>
+
+          <p>Packages and Imports are essential for using external libraries and packages in your code. An example would be something like Pygame, a library which makes it easy to make a game in Python without using a game engine. To use it you'd have to download it, and that's usually done with a package manager like Python's pip or Rust's cargo. A package manager makes it easier to use external packages. To use Pygame in Python you first download it with <code>pip install pygame</code> and if you want to use it in your code all you have to do is import it at the top.</p>
+
+          <p>There are 3 ways to import packages:</p>
+
+          <ul>
+            <li>Simple import: <code>import pygame</code></li>
+            <li>Import specific subsets: <code>from foo import bar</code></li>
+            <li>Use aliases (useful when the library has a long name): <code>import a_very_long_package_name as vlp</code> — allows you to use <code>vlp.foo()</code> instead of the full name.</li>
+          </ul>
+
+          <h3>Language specific features</h3>
+
+          <p>This section is different for every language so I won't get very into it, but I'll give you a few rough examples.</p>
+
+          <ul>
+            <li><strong>Python's features</strong> include the fact that it's a very elastic language thanks to being dynamically typed and its massive catalogue of libraries.</li>
+            <li><strong>Rust's features</strong> include the borrow checker, its heavy focus on type safety and its diverse array of types.</li>
+          </ul>
+
+          <h3>Functions</h3>
+
+          <p>Functions are really important as they allow you to reuse parts of your code and organize your code to make it more readable. Instead of typing a section of code every time, you can simply make a function and use it across your codebase (if you use imports). It helps you make readable code because you can know specifically what a section of code does thanks to the names of the functions. A crude example might be using <code>add(n1, n2)</code> instead of doing <code>n1 + n2</code>. Please note that this is a crude example and in actual code you don't need to make every addition into a function.</p>
+
+          <h2>Programming language cheat sheet</h2>
+
+          <h3>If you plan to make games with an engine</h3>
+          <ul>
+            <li>GDscript in Godot</li>
+            <li>C++ in Unreal Engine</li>
+            <li>C# in Unity Engine</li>
+          </ul>
+
+          <h3>If you plan to make web tools and games</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>A backend language of your choice</li>
+          </ul>
+
+          <h3>If you plan to make games without an engine</h3>
+          <ul>
+            <li>C with Raylib</li>
+            <li>Python with Pygame</li>
+            <li>C++ with SDL (or Raylib)</li>
+          </ul>
+
+          <h3>If you plan to make tools and QoL scripts</h3>
+          <ul>
+            <li>Bash</li>
+            <li>Python</li>
+          </ul>
+
+          <h3>If you plan to make general purpose scripts</h3>
+          <ul>
+            <li>Rust</li>
+            <li>Python</li>
+            <li>Go</li>
+          </ul>
+
+          <h3>Web backend languages</h3>
+          <ul>
+            <li>Go</li>
+            <li>Python with Flask/Django</li>
+            <li>Rust</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2026 neptune</p>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

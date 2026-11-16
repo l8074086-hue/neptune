@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Debugging (How to debug) — A practical guide to finding and fixing bugs in your code">
+    <title>Debugging (How to Debug) — Neptune's Domain!</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.onload=null;this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+    <main>
+      <nav aria-label="Main navigation">
+        <a href="/">← Back home</a> |
+        <a href="/blog/">blog</a> |
+        <a href="/pancakes/">pancakes &lt;3</a> |
+        <a href="/aboutme/">about me</a> |
+        <a href="/projects">projects</a>
+      </nav>
+
+      <article class="blog-post">
+        <header class="blog-post-header">
+          <h1>Debugging (How to Debug)</h1>
+          <div class="blog-post-meta">
+            <span class="blog-post-date"><i class="fas fa-calendar-alt"></i> July 16, 2026</span>
+            <span class="blog-tag">programming</span>
+            <span class="blog-tag">debugging</span>
+          </div>
+        </header>
+
+        <section class="blog-post-content">
+          <h2>How do I debug my code?</h2>
+
+          <p>If you've written code that isn't working, congratulations—you are now officially a programmer. Debugging is the process of identifying, isolating, and fixing "bugs" (errors) in your software. It is a detective game where you are both the detective and the accidental culprit. Personally, I believe the best way to debug is to stop guessing and start observing.</p>
+
+          <h3>Why is my code failing?</h3>
+
+          <p>Broadly speaking, errors fall into three buckets:</p>
+
+          <ul>
+            <li><strong>Syntax Errors:</strong> The "grammar" of your code is wrong. The computer can't even start running it.</li>
+            <li><strong>Runtime Errors:</strong> The code starts running but crashes midway (e.g., trying to divide by zero).</li>
+            <li><strong>Logic Errors:</strong> The code runs perfectly, but the result is wrong. These are the hardest to find because the computer is doing exactly what you <em>told</em> it to do, not what you <em>wanted</em> it to do.</li>
+          </ul>
+
+          <hr>
+
+          <h3>The Power of Print Debugging</h3>
+
+          <p>Print debugging is the "old reliable" of the programming world. While fancy tools exist, nothing beats the speed of dropping a few print statements to see what's happening under the hood.</p>
+
+          <h4>1. Validating State (Variable Checks)</h4>
+
+          <p>The most common use is checking if your variables actually hold the data you expect. If your math is wrong, print the values <em>before</em> the calculation.</p>
+
+          <pre><code>print(f"DEBUG: score={score}, multiplier={mult}") # Check values
+final_score = score * mult</code></pre>
+
+          <h4>2. Following Control Flow (Path Tracing)</h4>
+
+          <p>This is a specific method used to see which "path" your code took through <code>if/else</code> statements or loops. When your code doesn't do anything, it's often because it never entered the block of code you expected it to.</p>
+
+          <p>You can add "breadcrumbs" to trace the execution:</p>
+
+          <pre><code>if user_authenticated:
+    print("PATH: Entered authentication block")
+    if user_is_admin:
+        print("PATH: User is admin, opening dashboard")
+        show_admin_dashboard()
+    else:
+        print("PATH: User is guest, opening home")
+        show_welcome_page()
+else:
+    print("PATH: Authentication failed, redirecting to login")
+    show_login()</code></pre>
+
+          <p>By looking at your console, you can instantly see if the logic skipped a section entirely.</p>
+
+          <hr>
+
+          <h3>Other Essential Tools</h3>
+
+          <p>Beyond printing, you should familiarize yourself with these techniques:</p>
+
+          <h4>Reading the Traceback</h4>
+
+          <p>When your code crashes, the terminal spits out a "Traceback." Most beginners ignore it because it looks scary, but it's a map. It tells you exactly which file and which line caused the error. <strong>Always look at the very bottom line first</strong>—it contains the Error Name (e.g., <code>IndexError</code>) and a description.</p>
+
+          <h4>Rubber Ducking</h4>
+
+          <p>Explain your code, line by line, to an inanimate object (like a rubber duck). By forcing your brain to translate logic into spoken words, you often realize where you made a false assumption.</p>
+
+          <h4>Using a Debugger (Breakpoints)</h4>
+
+          <p>A debugger is a tool built into your editor (like VS Code) that lets you pause time.</p>
+
+          <ul>
+            <li><strong>Breakpoints:</strong> Click next to a line number to set a "stop sign." The code freezes there.</li>
+            <li><strong>Step Over:</strong> Move through your code one single line at a time to see exactly when the crash happens.</li>
+          </ul>
+
+          <hr>
+
+          <h3>Debugging Cheat Sheet</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>If your code...</th>
+                <th>Try this first:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Won't start at all</td>
+                <td>Look for missing colons, mismatched parentheses, or indentation.</td>
+              </tr>
+              <tr>
+                <td>Crashes immediately</td>
+                <td>Read the bottom of the Traceback; check if a variable is <code>None</code> or <code>Null</code>.</td>
+              </tr>
+              <tr>
+                <td>Gives the wrong output</td>
+                <td>Use "Path Tracing" prints to see which <code>if</code> statements are triggering.</td>
+              </tr>
+              <tr>
+                <td>Loops forever</td>
+                <td>Add a <code>print()</code> inside the loop to see why your "break" condition isn't met.</td>
+              </tr>
+              <tr>
+                <td>Is "Missing" a feature</td>
+                <td>Check your imports; did you actually call the function you wrote?</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <blockquote>
+            <p><strong>Pro Tip:</strong> When you're done debugging, remember to remove your print statements! There is nothing more embarrassing than a professional tool accidentally printing "HERE!!!" or "IT WORKS FINALLY" in a production log.</p>
+          </blockquote>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <p>&copy; 2026 neptune</p>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
+</html>

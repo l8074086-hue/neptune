@@ -54,6 +54,25 @@ body {
   padding: 20px;
   transition: background-color 0.3s, color 0.3s;
 }
+.abouther-text {
+  background-color: var(--bg);
+  color: #4982AB;
+  font-family: "JetBrains Mono", Georgia, serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.abouther-header {
+  background-color: var(--bg);
+  color: #F0DF7D;
+  font-family: "JetBrains Mono", Georgia, serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
 
 img {
   max-width: 100%;
